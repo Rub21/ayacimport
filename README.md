@@ -33,6 +33,8 @@ Hemos utilizado los [OpenData](http://wiki.openstreetmap.org/wiki/JOSM/Plugins/O
 
 Para este proceso se va a reparar los tags que en el JOSM que fueron abreviados en el SHP file y eliminar  los tag `gid` y `layer`
 
+##### Atributos a Mapear en Buildings
+
 **Antes**
 
 ![screenshot from 2015-03-11 16 17 22](https://cloud.githubusercontent.com/assets/1152236/6607099/3ec86954-c80a-11e4-9bc0-f1185a6b909e.png)
@@ -40,8 +42,6 @@ Para este proceso se va a reparar los tags que en el JOSM que fueron abreviados 
 **Despues**
 
 ![screenshot from 2015-03-11 16 18 04](https://cloud.githubusercontent.com/assets/1152236/6607100/3ecd9af0-c80a-11e4-8ee1-583efcaff440.png)
-
-##### Atributos a Mapear en Buildings
 
 
 
@@ -89,3 +89,6 @@ Cada Point(address)se le asignara el tag:
 	addr:housenumber# Si esta disponible
 
 
+## Relacionado
+
+- [Ayacucho Import](http://wiki.openstreetmap.org/wiki/Import/Catalogue/Ayacucho-Peru)
