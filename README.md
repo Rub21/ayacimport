@@ -34,11 +34,12 @@ Hemos utilizado los [OpenData](http://wiki.openstreetmap.org/wiki/JOSM/Plugins/O
 Reparar los tags que en el JOSM que fueron abreviados en el SHP file y eliminar  los tag `gid` y `layer`
 
 Ejemplo:
+
 **Antes**
+
 ![screenshot from 2015-03-11 15 08 58](https://cloud.githubusercontent.com/assets/1152236/6606162/9df0c1c6-c803-11e4-8b7b-3d4c1abfa47c.png)
 
 **Despues**
-
 
 ![screenshot from 2015-03-11 15 33 13](https://cloud.githubusercontent.com/assets/1152236/6606223/f4018a82-c803-11e4-9427-b04888851822.png)
 
