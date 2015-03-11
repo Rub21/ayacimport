@@ -7,9 +7,6 @@ ALTER TABLE buildings DROP COLUMN "building:material";
 ALTER TABLE buildings DROP COLUMN "source:height";
 ALTER TABLE buildings DROP COLUMN "building:levels:underground";
 ALTER TABLE buildings DROP COLUMN "building:part";
-ALTER TABLE buildings DROP COLUMN "addr:street";
-ALTER TABLE buildings DROP COLUMN "addr:city";
-ALTER TABLE buildings DROP COLUMN "addr:country";
 ALTER TABLE buildings DROP COLUMN "roof:material";
 ALTER TABLE buildings DROP COLUMN "roof:shape";
 ALTER TABLE buildings DROP COLUMN "roof:height";
@@ -22,9 +19,6 @@ ALTER TABLE buildings ADD COLUMN "building:material" varchar(100);
 ALTER TABLE buildings ADD COLUMN "source:height" varchar(100);
 ALTER TABLE buildings ADD COLUMN "building:levels:underground" numeric;
 ALTER TABLE buildings ADD COLUMN "building:part" varchar(3);
-ALTER TABLE buildings ADD COLUMN "addr:street" varchar(100);
-ALTER TABLE buildings ADD COLUMN "addr:city" varchar(100);
-ALTER TABLE buildings ADD COLUMN "addr:country" varchar(100);
 ALTER TABLE buildings ADD COLUMN "roof:material" varchar(100);
 ALTER TABLE buildings ADD COLUMN "roof:shape" varchar(100);
 ALTER TABLE buildings ADD COLUMN "roof:height" numeric;
@@ -34,11 +28,11 @@ UPDATE buildings
   SET layer= replace(layer, '  ', ' '); 
 --=====================01 piso
 UPDATE buildings
-  SET building = 'yes', height=2.5 , "building:material"='rustic',"roof:material"='slate',"roof:shape" = 'gabled', "roof:height" = 1.5, "addr:city"='Ayacucho', "addr:country"='Perú'
+  SET building = 'yes', height=2.5 , "building:material"='rustic',"roof:material"='slate',"roof:shape" = 'gabled', "roof:height" = 1.5
  WHERE layer='01_PRIMER PISO RUSTICO'or layer='01_PISO_MR';
  
  UPDATE buildings
-  SET building = 'yes', height=3 , "building:material"='concrete',"roof:material"='concrete',"roof:shape" = 'flat', "addr:city"='Ayacucho', "addr:country"='Perú'
+  SET building = 'yes', height=3 , "building:material"='concrete',"roof:material"='concrete',"roof:shape" = 'flat'
  WHERE layer='01_PRIMER PISO NOBLE' or layer='01_PISO_MN';
  
 UPDATE buildings

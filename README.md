@@ -11,46 +11,42 @@ Por el momento se ha generados un archivos .OSM de la ciudad de Ayacucho, este y
 
 ## Procesamiento de los datos:
 
-##### Descargar los datos:
+#### Descargar los datos:
 
 - https://s3.amazonaws.com/osmimport/importayacucho/address.zip
 - https://s3.amazonaws.com/osmimport/importayacucho/buildings.zip
 - https://s3.amazonaws.com/osmimport/importayacucho/streetnames.zip
 
-##### Importar los datos en la Base de Datos
+#### Importar los datos en la Base de Datos
 
 Importar en la base de datos y ejecutar los query `address.sql`, `building.sql` y `streetnames.sql` o simplemente puede descargar la base de datos en :https://s3.amazonaws.com/osmimport/importayacucho/dbimportayac.dump.out  que ya contiene los datos procesados.
 
-##### Exportar los datos  en formato SHP
+#### Exportar los datos  en formato SHP
 
 Se ha utilizado Qgis, para la exportacinde los datos.
 
-##### Convertir SHP en OSM
+#### Convertir SHP en OSM
 
 Hemos utilizado los [OpenData](http://wiki.openstreetmap.org/wiki/JOSM/Plugins/OpenData) plugin del JOSM. 
 
-##### Repara Tag en JOSM
+#### Atributos a Mapear
 
-Reparar los tags que en el JOSM que fueron abreviados en el SHP file y eliminar  los tag `gid` y `layer`
-
-Ejemplo:
+Para este proceso se va a reparar los tags que en el JOSM que fueron abreviados en el SHP file y eliminar  los tag `gid` y `layer`
 
 **Antes**
 
-![screenshot from 2015-03-11 15 08 58](https://cloud.githubusercontent.com/assets/1152236/6606162/9df0c1c6-c803-11e4-8b7b-3d4c1abfa47c.png)
+![screenshot from 2015-03-11 16 17 22](https://cloud.githubusercontent.com/assets/1152236/6607099/3ec86954-c80a-11e4-9bc0-f1185a6b909e.png)
 
 **Despues**
 
-![screenshot from 2015-03-11 15 33 13](https://cloud.githubusercontent.com/assets/1152236/6606223/f4018a82-c803-11e4-9427-b04888851822.png)
+![screenshot from 2015-03-11 16 18 04](https://cloud.githubusercontent.com/assets/1152236/6607100/3ecd9af0-c80a-11e4-8ee1-583efcaff440.png)
 
-## Atributos a Mapear
+##### Atributos a Mapear en Buildings
 
-*Buildings*
+
 
 Cada way(Building) de primer piso(first floor) se le asignara el tag:
 
-	addr:city=Ayacucho # por defauld
-	addr:country=Perú # por defauld
 	building:levels:underground # Si esta disponible
 	building:levels # Si esta disponible
 	building:material # Si esta disponible
@@ -74,12 +70,22 @@ Cada way(Building) mayor a al segundo piso(second flor)  piso se le asignara el 
 	roof:shape # Si esta disponible
 	source:height # por defauld
 
-*Addresses*
+##### Atributos a Mapear en Addresses (Direciones)
 
-Each address is a node tagged with:
+**Antes**
+![screenshot from 2015-03-11 16 19 36](https://cloud.githubusercontent.com/assets/1152236/6607149/9e7ea3c2-c80a-11e4-9413-26678f802bc1.png)
 
-    addr:housenumber="HOUSE_NUMB"
-    addr:streetname="STREET_NAM"
-    addr:postcode="ZIPCODE"
+**Despues**
+![screenshot from 2015-03-11 16 20 55](https://cloud.githubusercontent.com/assets/1152236/6607148/9e7cdf38-c80a-11e4-8241-23ca4e8d711e.png)
+
+
+Cada Point(address)se le asignara el tag:
+
+	addr:country=Perú # por defauld
+	addr:city=Ayacucho # por defauld
+	addr:district=Ayacucho # por defauld
+	addr:province=Huamanga # por defauld
+	addr:postcode=05001 # por defauld
+	addr:housenumber# Si esta disponible
 
 
