@@ -29,6 +29,9 @@ ALTER TABLE buildings ADD COLUMN "roof:material" varchar(100);
 ALTER TABLE buildings ADD COLUMN "roof:shape" varchar(100);
 ALTER TABLE buildings ADD COLUMN "roof:height" numeric;
 
+--Update space on layer colum
+UPDATE buildings
+  SET layer= replace(layer, '  ', ' '); 
 --=====================01 piso
 UPDATE buildings
   SET building = 'yes', height=2.5 , "building:material"='rustic',"roof:material"='slate',"roof:shape" = 'gabled', "roof:height" = 1.5, "addr:city"='Ayacucho', "addr:country"='Perú'
@@ -37,6 +40,7 @@ UPDATE buildings
  UPDATE buildings
   SET building = 'yes', height=3 , "building:material"='concrete',"roof:material"='concrete',"roof:shape" = 'flat', "addr:city"='Ayacucho', "addr:country"='Perú'
  WHERE layer='01_PRIMER PISO NOBLE' or layer='01_PISO_MN';
+ 
 UPDATE buildings
   SET "building:levels"=1
  WHERE layer='01_PRIMER PISO RUSTICO' OR layer='01_PRIMER PISO NOBLE' OR layer='01_PISO_MN' OR layer='01_PISO_MR' OR layer='01_PISO_MR' ;
@@ -51,7 +55,6 @@ select count(*) as num, layer from buildings where position('02' in lower(layer)
 UPDATE buildings
   SET  "building:part"='yes', height=4.5 , "building:material"='rustic',"roof:material"='slate',"roof:shape" = 'gabled', min_height=2.5 , "roof:height" = 1.5
 WHERE layer='02_SEGUNDO PISO RUSTICO' or layer='02_PISO_MR';
-
 UPDATE buildings
   SET  "building:part"='yes', height=5.5 , "building:material"='concrete' ,"roof:material"='concrete',"roof:shape" = 'flat', min_height=3
  WHERE layer='02_SEGUNDO PISO NOBLE' or layer='02_PISO_MN';
@@ -64,12 +67,11 @@ UPDATE buildings
  WHERE layer='02_SOTANO_NOBLE' or layer='LOTE02 MR' or layer='02_SOTANO_RUSTICO';
  --=================03 piso
 select count(*) as num, layer from buildings where position('03' in lower(layer))>0 AND position('piso' in lower(layer))>0 group by layer order by num desc;
-
- UPDATE buildings
+UPDATE buildings
   SET  "building:part"='yes', height=6.5 , "building:material"='rustic',"roof:material"='slate',"roof:shape" = 'gabled', min_height=4.5, "roof:height" = 1.5
  WHERE layer='03_TERCER PISO RUSTICO';
  
- UPDATE buildings
+UPDATE buildings
   SET  "building:part"='yes', height=8 , "building:material"='concrete',"roof:material"='concrete',"roof:shape" = 'flat', min_height=5.5
  WHERE layer='03_TERCER PISO NOBLE' or layer='03_PISO_MN';
 

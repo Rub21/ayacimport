@@ -31,8 +31,54 @@ Hemos utilizado los [OpenData](http://wiki.openstreetmap.org/wiki/JOSM/Plugins/O
 
 ##### Repara Tag en JOSM
 
-Reparar los tags que en el JOSM que fueron abreviados  en el SHP file
+Reparar los tags que en el JOSM que fueron abreviados en el SHP file y eliminar  los tag `gid` y `layer`
 
 Ejemplo:
+**Antes**
+![screenshot from 2015-03-11 15 08 58](https://cloud.githubusercontent.com/assets/1152236/6606162/9df0c1c6-c803-11e4-8b7b-3d4c1abfa47c.png)
+
+**Despues**
+
+
+![screenshot from 2015-03-11 15 33 13](https://cloud.githubusercontent.com/assets/1152236/6606223/f4018a82-c803-11e4-9427-b04888851822.png)
+
+## Atributos a Mapear
+
+*Buildings*
+
+Cada way(Building) de primer piso(first floor) se le asignara el tag:
+
+	addr:city=Ayacucho # por defauld
+	addr:country=Perú # por defauld
+	building:levels:underground # Si esta disponible
+	building:levels # Si esta disponible
+	building:material # Si esta disponible
+	building=yes # por defauld
+	height # Si esta disponible
+	min_height # Si esta disponible
+	roof:material # Si esta disponible
+	roof:material # Si esta disponible
+	roof:shape # Si esta disponible
+	roof:shape # Si esta disponible
+	source:height # por defauld
+
+Cada way(Building) mayor a al segundo piso(second flor)  piso se le asignara el tag:
+
+	building:levels # Si esta disponible
+	building:material # Si esta disponible
+	building:part # por defauld
+	height # Si esta disponible
+	min_height # Si esta disponible
+	roof:material # Si esta disponible
+	roof:shape # Si esta disponible
+	source:height # por defauld
+
+*Addresses*
+
+Each address is a node tagged with:
+
+    addr:housenumber="HOUSE_NUMB"
+    addr:streetname="STREET_NAM"
+    addr:postcode="ZIPCODE"
 
 
