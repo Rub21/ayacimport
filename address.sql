@@ -41,71 +41,22 @@ DELETE FROM address  WHERE position('salud' in lower(value))>0;
 DELETE FROM address  WHERE position('lotizar' in lower(value))>0;
 DELETE FROM address  WHERE position('deportiva' in lower(value))>0;
 DELETE FROM address  WHERE position('reserva' in lower(value))>0;
-
-
-
 -- capitalizer text
 UPDATE address 
    SET value = initcap(value)  
+-- add colum
+
+ALTER TABLE address RENAME COLUMN "addr:housenumber" TO value ;
+ALTER TABLE address ADD COLUMN "addr:postcode" varchar(10);
+ALTER TABLE address ADD COLUMN "addr:province" varchar(100);
+ALTER TABLE address ADD COLUMN "addr:district"  varchar(100);
+UPDATE address
+   SET  "addr:province"='Huamanga', "addr:postcode"='05001', "addr:district"='Ayacucho'
+ WHERE char_length(value)<=3
+
 --select * from address WHERE position('deportiva' in lower(value))>0;
 
 
-ALTER TABLE address RENAME COLUMN value TO "addr:housenumber";
-ALTER TABLE address ADD COLUMN "addr:postcode" smallint;
-ALTER TABLE address ADD COLUMN "addr:province" varchar(100);
-ALTER TABLE address ADD COLUMN "addr:district"  varchar(100);
 
 
 
-
-
-
-UPDATE address 
-   SET bandera = true  
- WHERE char_length(addr_house)>10
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ALTER TABLE direccion2 ADD COLUMN num integer ;
-
-CREATE OR REPLACE FUNCTION isnumeric(text) RETURNS BOOLEAN AS $$
-DECLARE x NUMERIC;
-BEGIN
-    x = $1::NUMERIC;
-    RETURN TRUE;
-EXCEPTION WHEN others THEN
-    RETURN FALSE;
-END;
-$$ LANGUAGE plpgsql IMMUTABLE;
-
-SELECT isnumeric(addr_house)  from direccion2 
-
-
-
-
-UPDATE direccion2 
-   SET num = CAST(coalesce(addr_house) AS integer)   
- WHERE  isnumeric(addr_house) = true
-
- delete from direccion2 where addr_house= '0.23'
-
- 
-
-
-
-UPDATE direccion2 
-   SET addr_house = num
- WHERE  num is not null
