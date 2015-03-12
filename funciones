@@ -1,0 +1,24 @@
+﻿CREATE OR REPLACE FUNCTION set_blockid(_geom geometry)
+RETURNS  INTEGER
+AS $$
+DECLARE
+	_id INTEGER;	
+	BEGIN
+		_id =(select block_p.gid FROM block_p where st_dwithin(_geom,block_p.geom,0) limit 1) ;	
+	RETURN _id;
+	END;
+$$ LANGUAGE plpgsql;
+
+
+ALTER TABLE buildings ADD COLUMN id_block integer;
+ALTER TABLE address ADD COLUMN id_block integer;
+
+UPDATE buildings
+   SET id_block=get_blockid(geom)
+   
+UPDATE address
+   SET id_block=get_blockid(geom)
+
+  
+
+SELECT UpdateGeometrySRID('osm_roads', 'way', 4326);
