@@ -5,7 +5,7 @@ var header = '{| class="wikitable" class="wikitable sortable"\n' +
 	'! Addresses file\n' +
 	'! Progreso\n' +
 	'! Notas/Comentarios';
-//'}';
+
 console.log(header);
 for (var i = 0; i <= 146; i++) {
 
@@ -80,9 +80,6 @@ for (var i = 0; i <= 146; i++) {
 			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-addresses.osm zona ' + i + ' - addresses] \n' +
 			'|\n' +
 			'|';
-
-
-
 	console.log(row);
-
 };
+console.log('}');
