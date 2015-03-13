@@ -104,9 +104,9 @@ UPDATE buildings SET "building:levels"=7 WHERE layer='07_SEPTIMO PISO NOBLE';
 --== balcones
 --select count(*) as num, layer from buildings where position('balcon' in lower(layer))>0 group by layer order by num desc;
 UPDATE buildings SET "building:part"='yes', height = 4, min_height=3 WHERE layer='BALCON_2P' or layer='BALCON 2P';
-UPDATE buildings SET "building:part"='yes', height = 6.5, min_height=5.5 WHERE layer='BALCON_3P';
-UPDATE buildings SET "building:part"='yes', height = 9, min_height=8 WHERE layer='BALCON_4P';
-UPDATE buildings SET "building:part"='yes', height = 11.5, min_height=10.5 WHERE layer='BALCON_5P';
+UPDATE buildings SET "building:part"='yes', height = 6.5, min_height=5.5 WHERE layer='BALCON_3P' or layer='BALCON 3P';
+UPDATE buildings SET "building:part"='yes', height = 9, min_height=8 WHERE layer='BALCON_4P' or layer='BALCON 4P';
+UPDATE buildings SET "building:part"='yes', height = 11.5, min_height=10.5 WHERE layer='BALCON_5P'or layer='BALCON 5P';
 --== source:height
 UPDATE buildings SET "source:height"='estimate';
 --== corredores
