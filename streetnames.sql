@@ -1,1 +1,0 @@
-﻿ALTER TABLE streetnames RENAME COLUMN value TO name ;

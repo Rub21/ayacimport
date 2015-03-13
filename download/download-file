@@ -1,0 +1,8 @@
+#!/bin/bash
+for i in $(seq $1 $2)
+do	       
+    curl  "http://localhost:3021/buil/$i" -o "zona-$i-buildings.osm"
+    curl  "http://localhost:3021/addr/$i" -o "zona-$i-addresses.osm"
+done
+
+

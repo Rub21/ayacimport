@@ -21,28 +21,16 @@ Por el momento se ha generados un archivos .OSM de la ciudad de Ayacucho, este y
 
 Importar en la base de datos y ejecutar los query `address.sql`, `building.sql` y `streetnames.sql` o simplemente puede descargar la base de datos en :https://s3.amazonaws.com/osmimport/importayacucho/dbimportayac.dump.out  que ya contiene los datos procesados.
 
-#### Exportar los datos  en formato SHP
+#### Ejecutar server
 
-Se ha utilizado Qgis, para la exportacinde los datos.
+http://localhost:3021/id
 
-#### Convertir SHP en OSM
 
-Hemos utilizado los [OpenData](http://wiki.openstreetmap.org/wiki/JOSM/Plugins/OpenData) plugin del JOSM. 
+
 
 #### Atributos a Mapear
 
-Para este proceso se va a reparar los tags que en el JOSM que fueron abreviados en el SHP file y eliminar  los tag `gid` y `layer`
-
 ##### Atributos a Mapear en Buildings
-
-**Antes**
-
-![screenshot from 2015-03-11 16 17 22](https://cloud.githubusercontent.com/assets/1152236/6607099/3ec86954-c80a-11e4-9bc0-f1185a6b909e.png)
-
-**Despues**
-
-![screenshot from 2015-03-11 16 18 04](https://cloud.githubusercontent.com/assets/1152236/6607100/3ecd9af0-c80a-11e4-8ee1-583efcaff440.png)
-
 
 
 Cada way(Building) de primer piso(first floor) se le asignara el tag:
