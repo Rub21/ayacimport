@@ -65,6 +65,8 @@ Cada Point(address)se le asignara el tag:
 
 ## Mapa de zonas
 
+http://rub21.github.io/ayacimport/
+
 ## Relacionado
 
 - [Ayacucho Import](http://wiki.openstreetmap.org/wiki/Import/Catalogue/Ayacucho-Peru)
