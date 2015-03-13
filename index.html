@@ -52,8 +52,8 @@
         }
 
         function zoomToFeature(e) {
-          $.ajax('http://localhost:8111/import?new_layer=true&url=http://localhost:3021/buil/' + e.target.feature.properties.gid);
-          $.ajax('http://localhost:8111/import?new_layer=true&url=http://localhost:3021/addr/' + e.target.feature.properties.gid);
+          $.ajax('http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/buil/' + e.target.feature.properties.gid);
+          $.ajax('http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/addr/' + e.target.feature.properties.gid);
           map.fitBounds(e.target.getBounds());
         }
     </script>

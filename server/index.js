@@ -9,7 +9,7 @@ var client = new pg.Client(
 	"@" + (argv.pghost || 'localhost') +
 	"/" + (argv.pgdatabase || 'dbimportayac')
 );
-var url = "http://" + (argv.dbhost || 'localhost') + ":3021/";
+var url = "http://" + (argv.dbhost || 'localhost') + ":3019/";
 console.log('Running on: ' + url);
 var client = new pg.Client(client);
 var app = express();
