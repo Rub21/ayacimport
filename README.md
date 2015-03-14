@@ -64,6 +64,7 @@ Cada Point(address)se le asignara el tag:
 	addr:housenumber# Si esta disponible
 
 ## Mapa de zonas
+Muestra las zonas en la que hemos dividido Ayacucho para el trabajo en pequeños sectores.
 
 http://rub21.github.io/ayacimport/
 

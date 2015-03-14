@@ -5,16 +5,16 @@ var header = '{| class="wikitable" class="wikitable sortable"\n' +
 	'! Addresses file\n' +
 	'! Progreso\n' +
 	'! Notas/Comentarios';
-
+//'}';
 console.log(header);
-for (var i = 0; i <= 146; i++) {
+for (var i = 1; i <= 146; i++) {
 
 	if (i <= 20)
 		var row = '|-\n' +
 			'|Zona ' + i + '\n' +
 			'|[http://www.openstreetmap.org/user/ediyes ediyes]\n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-buildings.osm zona ' + i + ' - buildings] \n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-addresses.osm zona ' + i + ' - addresses] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/buil/' + i + ' zona-' + i + '-buildings] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/addr/' + i + ' zona-' + i + '-addresses] \n' +
 			'|\n' +
 			'|';
 
@@ -22,8 +22,8 @@ for (var i = 0; i <= 146; i++) {
 		var row = '|-\n' +
 			'|Zona ' + i + '\n' +
 			'|[http://www.openstreetmap.org/user/Luis36995 Luis36995]\n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-buildings.osm zona ' + i + ' - buildings] \n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-addresses.osm zona ' + i + ' - addresses] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/buil/' + i + ' zona-' + i + '-buildings] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/addr/' + i + ' zona-' + i + '-addresses] \n' +
 			'|\n' +
 			'|';
 
@@ -31,8 +31,8 @@ for (var i = 0; i <= 146; i++) {
 		var row = '|-\n' +
 			'|Zona ' + i + '\n' +
 			'|[https://www.openstreetmap.org/user/dannykath dannykath]\n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-buildings.osm zona ' + i + ' - buildings] \n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-addresses.osm zona ' + i + ' - addresses] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/buil/' + i + ' zona-' + i + '-buildings] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/addr/' + i + ' zona-' + i + '-addresses] \n' +
 			'|\n' +
 			'|\n';
 
@@ -40,8 +40,8 @@ for (var i = 0; i <= 146; i++) {
 		var row = '|-\n' +
 			'|Zona ' + i + '\n' +
 			'|[https://www.openstreetmap.org/user/RichRico RichRico]\n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-buildings.osm zona ' + i + ' - buildings] \n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-addresses.osm zona ' + i + ' - addresses] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/buil/' + i + ' zona-' + i + '-buildings] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/addr/' + i + ' zona-' + i + '-addresses] \n' +
 			'|\n' +
 			'|';
 
@@ -49,8 +49,8 @@ for (var i = 0; i <= 146; i++) {
 		var row = '|-\n' +
 			'|Zona ' + i + '\n' +
 			'|[https://www.openstreetmap.org/user/abel801 abel801]\n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-buildings.osm zona ' + i + ' - buildings] \n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-addresses.osm zona ' + i + ' - addresses] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/buil/' + i + ' zona-' + i + '-buildings] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/addr/' + i + ' zona-' + i + '-addresses] \n' +
 			'|\n' +
 			'|';
 
@@ -58,8 +58,8 @@ for (var i = 0; i <= 146; i++) {
 		var row = '|-\n' +
 			'|Zona ' + i + '\n' +
 			'|[https://www.openstreetmap.org/user/calfarome calfarome]\n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-buildings.osm zona ' + i + ' - buildings] \n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-addresses.osm zona ' + i + ' - addresses] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/buil/' + i + ' zona-' + i + '-buildings] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/addr/' + i + ' zona-' + i + '-addresses] \n' +
 			'|\n' +
 			'|';
 
@@ -67,8 +67,8 @@ for (var i = 0; i <= 146; i++) {
 		var row = '|-\n' +
 			'|Zona ' + i + '\n' +
 			'|[https://www.openstreetmap.org/user/samely samely]\n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-buildings.osm zona ' + i + ' - buildings] \n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-addresses.osm zona ' + i + ' - addresses] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/buil/' + i + ' zona-' + i + '-buildings] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/addr/' + i + ' zona-' + i + '-addresses] \n' +
 			'|\n' +
 			'|';
 
@@ -76,10 +76,15 @@ for (var i = 0; i <= 146; i++) {
 		var row = '|-\n' +
 			'|Zona ' + i + '\n' +
 			'|[http://www.openstreetmap.org/user/Rub21 Rub21]\n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-buildings.osm zona ' + i + ' - buildings] \n' +
-			'|[http://localhost:8111/import?new_layer=true&url=https://s3.amazonaws.com/osmimport/importayacucho/processdata/zona-' + i + '-addresses.osm zona ' + i + ' - addresses] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/buil/' + i + ' zona-' + i + '-buildings] \n' +
+			'|[http://localhost:8111/import?new_layer=true&url=http://54.147.228.251:3019/addr/' + i + ' zona-' + i + '-addresses] \n' +
 			'|\n' +
 			'|';
+
+
+
 	console.log(row);
+
 };
+
 console.log('}');

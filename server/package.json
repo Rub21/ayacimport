@@ -10,7 +10,8 @@
     "express": "^4.0.0",
     "geojson2osm": "0.0.3",
     "optimist": "^0.6.1",
-    "pg": "^3.4.0"
+    "pg": "^3.4.0",
+    "underscore": "^1.8.2"
   },
   "scripts": {
     "run": "./index.js"
