@@ -335,6 +335,26 @@ INSERT INTO temp_build(geom,min_gid ,max_gid,min_levels,max_leves,numduples )
   HAVING COUNT(gid) > 1;
 SELECT simplificar(min_gid ,max_gid) FROM temp_build;
 
+--== QUINTA ITERACION
+DROP TABLE temp_build;
+CREATE TABLE temp_build
+(
+  gid SERIAL NOT NULL,
+  geom geometry(MultiLineString,4326),
+  min_gid NUMERIC,
+  max_gid NUMERIC,
+  min_levels NUMERIC,
+  max_leves  NUMERIC,
+  numduples NUMERIC
+);
+INSERT INTO temp_build(geom,min_gid ,max_gid,min_levels,max_leves,numduples )
+  SELECT geom, min(gid) as min_gid, max(gid) as max_gid,min("building:levels") as min_levels,max("building:levels") as max_levels,COUNT(gid) as 
+  numduples 
+  FROM buildings 
+  GROUP BY geom 
+  HAVING COUNT(gid) > 1;
+SELECT simplificar(min_gid ,max_gid) FROM temp_build;
+
 --==  eliminar datos no necesario
 UPDATE buildings SET "building:levels"= null WHERE layer='BALCON_2P' or layer='BALCON 2P' or layer='BALCON_3P' or layer='BALCON 3P' or layer='BALCON_4P' or layer='BALCON 4P' or layer='BALCON_5P'or layer='BALCON 5P';
 UPDATE buildings
