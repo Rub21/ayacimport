@@ -88,10 +88,8 @@ app.get('/buil/:id', function(req, res) {
 					});
 					//array_cord.push([parseFloat(_.first(geom.coordinates[0])[0]).toFixed(8), parseFloat(_.first(geom.coordinates[0])[1]).toFixed(8)]);
 					array_cord.push(_.first(array_cord));
-
 					way.geometry.coordinates = array_cord;
 					way.geometry.type = 'LineString';
-					console.log(way.geometry);
 					json.features.push(way);
 				}
 				var osm = geojson2osm.geojson2osm(json);
