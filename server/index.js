@@ -81,22 +81,19 @@ app.get('/buil/:id', function(req, res) {
 					var geom = JSON.parse(result.rows[i].geom);
 					var cord = {};
 					_.each(geom.coordinates[0], function(v, k) {
-						cord[k] = [geom.coordinates[0][k][0].toFixed(7), geom.coordinates[0][k][1].toFixed(7)];
+						cord[k] = [geom.coordinates[0][k][0].toFixed(8), geom.coordinates[0][k][1].toFixed(8)];
 					});
 					var array_cord = _.map(_.keys(_.invert(cord)), function(v) {
 						return [parseFloat(v.split(",")[0]), parseFloat(v.split(",")[1])];
 					});
-					array_cord.push(_.first(geom.coordinates[0]));
+					//array_cord.push([parseFloat(_.first(geom.coordinates[0])[0]).toFixed(8), parseFloat(_.first(geom.coordinates[0])[1]).toFixed(8)]);
+					array_cord.push(_.first(array_cord));
+
 					way.geometry.coordinates = array_cord;
 					way.geometry.type = 'LineString';
 					console.log(way.geometry);
 					json.features.push(way);
 				}
-				fs.writeFile('file.js', JSON.stringify(json), function(err) {
-					if (err) {
-						console.log(err);
-					}
-				});
 				var osm = geojson2osm.geojson2osm(json);
 				res.set('Content-Type', 'text/xml');
 				res.send(osm);
