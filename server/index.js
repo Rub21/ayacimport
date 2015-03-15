@@ -72,8 +72,8 @@ app.get('/buil/:id', function(req, res) {
 					if (result.rows[i].b_l !== null) {
 						way.properties['roof:material'] = result.rows[i].r_m;
 					}
-					if (result.rows[i].r_h !== null) {
-						way.properties['roof:shape'] = result.rows[i].r_h;
+					if (result.rows[i].r_s !== null) {
+						way.properties['roof:shape'] = result.rows[i].r_s;
 					}
 					if (result.rows[i].r_h !== null) {
 						way.properties['roof:height'] = result.rows[i].r_h;
